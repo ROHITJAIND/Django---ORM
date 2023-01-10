@@ -1,0 +1,3 @@
+superuser : admin
+emmail : admin@example.com
+password : admin@123

@@ -18,9 +18,28 @@ Include your ER diagram here
 Write your own steps
 
 ## PROGRAM
+```
+model.py  
 
-Include your code here
+from django.db import models
+from django.contrib import admin
+class Employee (models.Model):
+    eid=models.CharField(max_length=20,help_text="Employee ID")
+    name=models.CharField(max_length=100)
+    salary=models.IntegerField()
+    age=models.IntegerField()
+    email=models.EmailField()
 
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display=('eid','name','salary','age','email')  
+
+admim.py  
+
+from django.contrib import admin
+from .models import Employee,EmployeeAdmin
+admin.site.register(Employee,EmployeeAdmin)
+
+```
 ## OUTPUT
 
 Include the screenshot of your admin page.
